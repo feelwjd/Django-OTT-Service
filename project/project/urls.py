@@ -22,7 +22,7 @@ import chatting.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('streaming',include('streaming.urls')),
-    path('chatting',include('chatting.urls')),
-    path('account',include('account.urls')),
+    path('',include('streamming.urls')),
+    path('',include('chatting.urls')),
+    path('',include('account.urls')),
 ]

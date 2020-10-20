@@ -2,8 +2,6 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib import auth
 from django.contrib.auth import authenticate, login
-import app01.views
-import app01.models
 from django.views.generic.detail import DetailView
 from django.contrib.auth.models import User
 from django.shortcuts import render
