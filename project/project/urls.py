@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path , include
+from django.conf.urls import url, include
 import account.views
 import streamming.views
 import chatting.views
@@ -23,6 +24,6 @@ import chatting.views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('streamming.urls')),
-    path('',include('chatting.urls')),
     path('',include('account.urls')),
+    url(r'^chatting/', include('chatting.urls')),
 ]
