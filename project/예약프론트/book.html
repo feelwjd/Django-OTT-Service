@@ -11,6 +11,9 @@
     <style>
         body {
             text-align: center;
+            background-image: url("../static/background_img.png");
+            background-size: cover;
+            background-repeat: no-repeat;
         }
         .round {
             position: absolute;
@@ -18,7 +21,7 @@
             top:50%;
             transform: translate(-50%, -50%);
             width: 950px;
-            height: 700px;
+            height: 550px;
             color: white;
             background-color: rgb(0, 0, 0);
             border:2px solid rgb(218, 41, 28);
@@ -28,7 +31,7 @@
 
         .v1{
             border-left: 1.5px solid white;
-            height: 680px;
+            height: 530px;
         }
 
         h4 {
@@ -133,7 +136,7 @@
                 <h4>상영시간</h4>
                 <hr>
                 <form action="." method="POST">{% csrf_token %}
-                    <input type="date" id="currentDate"/> 
+                    <input type="date" id="currentDate"/>
                     <hr>
                     <div class="rdo-grp">
                     <input type="radio" name="time" id="r1" value="1"/>
@@ -170,13 +173,12 @@
                 <input type="submit" value="결제">
                 </form>
             </div>
-
             <div class="v1"></div>
             
             <div class="col-3" style="margin-left: 15px;">
                 <h4>결제완료</h4>
                 <hr>
-                
+                <img src="../static/book.png" width="100%">
             </div>
         </div>
     </div>
