@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>예약확인</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+
+    <style>
+        body {
+            text-align: center;
+        }
+        .round {
+            position: absolute;
+            left: 50%;
+            top:50%;
+            transform: translate(-50%, -50%);
+            width: 950px;
+            height: 700px;
+            color: white;
+            background-color: rgb(0, 0, 0);
+            border:2px solid rgb(175, 0, 0);
+            padding:0.5em;
+            border-radius: 17px;
+        }
+
+        .v1{
+            border-left: 1.5px solid white;
+            height: 680px;
+        }
+
+        h4 {
+            margin-top: 100px;
+            padding-right: 220px
+            ;
+        }
+
+        hr {
+            background-color: white;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .rdo-grp{
+            margin-left: 50px;
+        }
+
+        .rdo-grp label {
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+            padding: 6px 8px;
+            border-radius: 20px;
+            transition: all 0.2s ease;
+            float:left; 
+        }
+
+
+        .rdo-grp label:not(:last-child) {
+            margin-right: 16px;
+        }
+
+        .rdo-grp label span {
+            vertical-align: middle;
+        }
+
+        .rdo-grp label span:first-child {
+            position: relative;
+            display: inline-block;
+            vertical-align: middle;
+            width: 20px;
+            height: 20px;
+            background: #e8eaed;
+            border-radius: 50%;
+            transition: all 0.2s ease;
+            margin-right: 8px;
+        }
+
+        .rdo-grp label span:first-child:after {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            margin: 2px;
+            background: none;
+            border-radius: 50%;
+            transition: all 0.2s ease;
+        }
+
+        .rdo-grp label:hover span:first-child {
+            background: rgb(175, 0, 0);
+        }
+
+        .rdo-grp input  {
+            display: none;
+        }
+        
+        .rdo-grp input:checked + label span:first-child {
+            background: rgb(175, 0, 0);
+        }
+
+        .rdo-grp input:checked + label span:first-child:after {
+            transform: scale(0.5);
+        }
+
+        input[type="submit"] {
+            border:2px solid rgb(175, 0, 0);
+            background-color: rgb(175, 0, 0);
+            color: white;
+            border-radius: 10px;
+            width: 150px;
+            height: 60px;
+            font-size: larger;
+            margin-top: 30px;
+        }
+        input[type="submit"]:hover{
+            border-radius: 10px;
+            border:2px solid  rgb(134, 0, 0);
+            background-color: rgb(134, 0, 0);
+            color : white;
+            font-size: larger;
+            width: 150px;
+            height: 60px;
+            margin-top: 30px;
+        }
+
+        img {
+            padding-left: 10px;
+            padding-top: 70px;
+        }
+
+        p {
+            padding-top:70px;
+            padding-left: 35px;
+        }
+
+.dropbtn {
+    width: 45px;
+    height: 45px;
+  background-color: black;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+    padding-right: 100px;
+    padding-top: 50px;
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: black;
+  min-width: 160px; 
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: rgb(82, 82, 82);}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color:  black;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="round">
+              <div class="row">
+                  <div class="col-3">
+                      <div class="row">
+                          <div class="col-6">
+                            <p>프로필</p>
+                          </div>
+                          <div class="col-6">
+                            <div class="dropdown">
+                                <button class="dropbtn">∨</button>
+                                <div class="dropdown-content">
+                                  <a href="#">예약확인</a>
+                                  <a href="#">설정</a>
+                                  <a href="#">고객센터</a>
+                                </div>
+                              </div>
+                        </div>
+                      </div>
+                    
+                    
+                  </div>
+                  <div class="col-9">
+                <h4>예매확인</h4> 
+                </div>
+              </div>
+                <div class="row" style="overflow:auto; width: auto; height: 80%;">
+                    <img src="static/삼진그룹토익반_예매확인.png" width="25%">
+                    <img src="static/베이비티스._예매확인.png" width="25%">
+                    <img src="static/변산._예매확인.png"width="25%">
+                    <img src="static/라이프_예매확인.png"width="25%">
+                    <img src="static/삼진그룹토익반_예매확인.png" width="25%">
+                    <img src="static/베이비티스._예매확인.png" width="25%">
+                    <img src="static/변산._예매확인.png"width="25%">
+                    <img src="static/라이프_예매확인.png"width="25%">
+                </div> 
+                 
+
+
+            
+                     
+                
+           
+        </div>
+    </div>        
+    
+
+</body>
+</html>
+<script>
+    document.getElementById('currentDate').value = new Date().toISOString().substring(0, 10);;
+</script>
