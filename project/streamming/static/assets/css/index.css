@@ -1,0 +1,49 @@
+*{
+    color: rgb(218, 41, 28);
+}
+
+header{
+    margin-left: 1em;
+    margin-top: 1em;
+}
+
+h1{
+    margin-left: 3em;
+    padding-top: 0.6em;
+}
+
+.poster p{ 
+}
+
+.ticket{
+
+}
+
+#photo1{
+    margin-left: 4.2em;
+}
+#photo2{
+    margin-left: 4.2em;
+}
+
+#photo3{
+    margin-left: 4.2em;
+}
+
+#photo4{
+    margin-left: 4.2em;
+}
+
+#photo5{
+    margin-left: 4.2em;
+}
+
+
+button{
+    border: 0 transparent;
+    width: 4em;
+    height: 0em;
+    background-color:transparent;
+    
+    
+}
