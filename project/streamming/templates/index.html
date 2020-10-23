@@ -1,0 +1,115 @@
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/assets/css/index.css">
+     
+</head>
+<body bgcolor="black">
+    <header>
+            <img src="../static/assets/img/lottelogo.png" alt="" style="float: left;" style="height: 50px;" width="70px">
+            <h1>LIVE</h1>
+    </header>
+
+    <div id="galleryCont">
+        <div style="position: absolute;" id="ticket1">  
+            <div style="position: relative; top: 22em; left:20em "><button><img src="../static/assets/img/ticket1.png" style="width: 16em;"></button></div>
+        </div>
+        
+        <div style="position: absolute;" id="ticket2">
+            <div style="position: relative; top: 22em; left:38em "><button ><img src="../static/assets/img/ticket2.png" style="width: 16em;"></button></div>
+        </div>
+
+        <div style="position: absolute;" id="ticket3">
+            <div style="position: relative; top: 22em; left:56em "><button ><img src="../static/assets/img/ticket3.png" style="width: 16em;"></button></div>
+        </div>
+
+        <div style="position: absolute;" id="ticket4">
+            <div style="position: relative; top: 22em; left:74em "><button ><img src="../static/assets/img/ticket4.png" style="width: 16em;"></button></div>
+        </div>
+    
+        <div style="position: absolute;" id="ticket5">
+            <div style="position: relative; top: 22em; left:2em "><button ><img src="../static/assets/img/ticket5.png" style="width: 16em;"></button></div>
+        </div>
+        
+        
+        <video muted autoplay loop>
+            <source src="../static/assets/img/s01.mp4" type="video/mp4" width="100%" height="90%" id="photo1">
+        </video>
+        <!--
+        <img src="../static/assets/img/s01.png" width="90%" height="90%" id="photo1">
+        -->
+        <img src="../static/assets/img/s02.png" width="90%" height="90%" id="photo2">
+        <img src="../static/assets/img/s03.png" width="90%" height="90%" id="photo3">
+        <img src="../static/assets/img/s04.png" width="90%" height="90%" id="photo4">
+        <img src="../static/assets/img/s05.png" width="90%" height="90%" id="photo5">
+        
+        </div>
+
+       
+        </html>
+       
+        <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+ 
+        <script>
+            $(document).ready(function(){
+                    $("#photo1").hide();
+                    $("#photo2").hide();
+                    $("#photo3").hide();
+                    $("#photo4").hide();
+                    $("#photo5").hide();
+        
+                    
+                    $("#ticket1").click(function(){
+                        $("#photo1").show();
+                        $("#photo2").hide();
+                        $("#photo3").hide();
+                        $("#photo4").hide();
+                        $("#photo5").hide();
+                    });
+         
+                    
+                    $("#ticket2").click(function(){
+                        $("#photo2").show();
+                        $("#photo1").hide();
+                        $("#pboto3").hide();
+                        $("#photo4").hide();
+                        $("#photo5").hide();
+                        
+                    });
+
+                    $("#ticket3").click(function(){
+                        $("#photo3").show();
+                        $("#photo1").hide();
+                        $("#pboto2").hide();
+                        $("#photo4").hide();
+                        $("#photo5").hide();
+                        
+                    });
+
+                    $("#ticket4").click(function(){
+                        $("#photo4").show();
+                        $("#photo1").hide();
+                        $("#pboto2").hide();
+                        $("#photo3").hide();
+                        $("#photo5").hide();
+                        
+                    });
+
+                    $("#ticket5").click(function(){
+                        $("#photo5").show();
+                        $("#photo1").hide();
+                        $("#pboto2").hide();
+                        $("#photo3").hide();
+                        $("#photo4").hide();
+                        
+                    });
+                });
+        </script>
+         
+       
+       
+</body>
+</html>
