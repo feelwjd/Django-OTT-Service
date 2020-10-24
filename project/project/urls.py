@@ -18,6 +18,11 @@ from django.urls import path , include
 import account.views
 import streamming.views
 import chatting.views
+from django.conf.urls import url, include
+from django.contrib import admin
+from django.conf import settings
+from django.conf.urls.static import static
+
 
 
 urlpatterns = [
@@ -25,4 +30,4 @@ urlpatterns = [
     path('',include('streamming.urls')),
     path('',include('chatting.urls')),
     path('',include('account.urls')),
-]
+]+static(settings.MEDIA_URL, document_root= settings.MEDIA_ROOT)
