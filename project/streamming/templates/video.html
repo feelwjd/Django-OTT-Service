@@ -6,18 +6,34 @@
 <body>
 {{nvideos}}
 <h1>Video Uploader</h1>
-<form enctype="multipart/form-data" method="POST" action="">
-{% csrf_token %}
-{{ form.as_p }}
-<input type="submit" value="Upload"/>
+
 </form>
 <br><br>
-<video width='400' controls>
-<source src={{ MEDIA_URL }}{{ nvideos }} type='video/mp4'>
+<video autoplay preload="metadata" id="video">
+<source src="{{ MEDIA_URL }}{{ nvideos }}" type='video/mp4'>
 Your browser does not support the video tag.
 </video>
 <br><br>
 </p>
 
 </body>
-<script>'undefined'=== typeof _trfq || (window._trfq = []);'undefined'=== typeof _trfd && (window._trfd=[]),_trfd.push({'tccl.baseHost':'secureserver.net'}),_trfd.push({'ap':'cpsh'},{'server':'p3plcpnl0769'}) // Monitoring performance to make your website faster. If you want to opt-out, please contact web hosting support.</script><script src='https://img1.wsimg.com/tcc/tcc_l.combined.1.0.6.min.js'></script></html>
+<script> 
+    var autoplayVideoInterval = setInterval("autoplayVideo()",200);
+
+
+    function autoplayVideo()
+    {
+    var promise = document.querySelector('video').play();
+    if (promise !== undefined)
+    {
+    promise.then(function (_)
+    {
+    // Autoplay started!
+    clearInterval(autoplayVideoInterval);
+    
+    }).catch(function (error) {// Autoplay was prevented.
+    // Show a "Play" button so that user can start playback.
+    });
+    }
+    }
+</script>

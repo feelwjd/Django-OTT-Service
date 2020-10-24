@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var Now = new Date();
+        var nowtime = Now.getHours();
+
+        function checkButton()
+        {
+            if (nowtime >= 12 && nowtime <= 16)
+            {
+                var btn = document.getElementById('add');
+                btn.disabled = 'disabled';
+            }
+        }
+    </script>
+</head>
+<body>
+    <button id="add">Button</button>
+    <script>
+        checkButton();
+    </script>
+    </div>
+</body>
+</html>
