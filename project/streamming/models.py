@@ -1,9 +1,10 @@
 from django.conf import settings
 from django.db import models
-# Create your models here.
 
+
+# Create your models here.
 class StreammingNvideo(models.Model):
-    nvideo = models.FileField(upload_to='videos/',null=True,verbose_name="")
+    nvideo = models.FileField(upload_to='videos/', null=True, verbose_name="")
     nid = models.IntegerField(primary_key=True)
     
     class Meta:

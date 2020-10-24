@@ -8,13 +8,13 @@
 <h1>Video Uploader</h1>
 <form enctype="multipart/form-data" method="POST" action="">
 {% csrf_token %}
-{{ form.as_p }}
+{{ forms.py }}
 <input type="submit" value="Upload"/>
 </form>
 
 <br><br>
 <video width='400' controls>
-<source src="{{StreammingNvideo_object.nvideo.url}}" type='video/mp4'>
+<source src="{{nvideos}}" type='video/mp4'>
 Your browser does not support the video tag.
 </video>
 <br><br>

@@ -12,4 +12,4 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('video',views.video,name='video')
-]
+]+static(settings.MEDIA_URL, document_root= settings.MEDIA_ROOT)

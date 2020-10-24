@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'streamming',
     'chatting',
-    'account'
+    'account',
 ]
 
 MIDDLEWARE = [
@@ -117,4 +117,4 @@ USE_TZ = True
 import os
 STATIC_URL = '/static/'
 MEDIA_URL='/media/'
-MEDIA_ROOT= os.path.join(BASE_DIR, 'media/')
+MEDIA_ROOT= os.path.join(BASE_DIR, 'media')
