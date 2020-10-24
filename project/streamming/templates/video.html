@@ -1,0 +1,39 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Upload Videos</title>
+</head>
+<body>
+{{nvideos}}
+<h1>Video Uploader</h1>
+
+</form>
+<br><br>
+<video autoplay preload="metadata" id="video">
+<source src="{{ MEDIA_URL }}{{ nvideos }}" type='video/mp4'>
+Your browser does not support the video tag.
+</video>
+<br><br>
+</p>
+
+</body>
+<script> 
+    var autoplayVideoInterval = setInterval("autoplayVideo()",200);
+
+
+    function autoplayVideo()
+    {
+    var promise = document.querySelector('video').play();
+    if (promise !== undefined)
+    {
+    promise.then(function (_)
+    {
+    // Autoplay started!
+    clearInterval(autoplayVideoInterval);
+    
+    }).catch(function (error) {// Autoplay was prevented.
+    // Show a "Play" button so that user can start playback.
+    });
+    }
+    }
+</script>
