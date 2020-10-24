@@ -10,3 +10,7 @@ class StreammingNvideo(models.Model):
     class Meta:
         managed = False
         db_table = 'streamming_nvideo' 
+        
+
+    def __str__(self):
+        return str(self.nvideo)

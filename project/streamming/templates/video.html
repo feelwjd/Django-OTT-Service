@@ -4,17 +4,16 @@
 <title>Upload Videos</title>
 </head>
 <body>
-
+{{nvideos}}
 <h1>Video Uploader</h1>
 <form enctype="multipart/form-data" method="POST" action="">
 {% csrf_token %}
-{{ forms.py }}
+{{ form.as_p }}
 <input type="submit" value="Upload"/>
 </form>
-
 <br><br>
 <video width='400' controls>
-<source src="{{nvideos}}" type='video/mp4'>
+<source src={{ MEDIA_URL }}{{ nvideos }} type='video/mp4'>
 Your browser does not support the video tag.
 </video>
 <br><br>
