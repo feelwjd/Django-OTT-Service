@@ -1,0 +1,42 @@
+*{
+    color: rgb(218, 41, 28);
+}
+
+button{
+    border: 0 transparent;
+    width: 4em;
+    height: 0em;
+    background-color:transparent;    
+}
+video{
+    margin-left: 0em;
+    width: 83%;
+    height: 640;
+    z-index: 0;
+}
+
+#ticket1{
+    z-index: 1;
+}
+#ticket2{
+    z-index: 1;
+}
+#ticket3{
+    z-index: 1;
+}
+#ticket4{
+    z-index: 1;
+}
+#ticket5{
+    z-index: 1;
+}
+#logo{
+    z-index: 2;
+    margin-left: 1em;
+    margin-top: 1em;
+
+}
+#logo2{
+    z-index: 4;
+    margin-top: 10em;
+}
