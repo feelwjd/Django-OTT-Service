@@ -139,7 +139,7 @@
         <div class="round">
             <div class="row">
                 <div class="col-3">
-                    <a href=""><img src="/static/logo.png"
+                    <a href="{%url 'index'%}"><img src="/static/logo.png"
                             style="width:70%; padding-top:20px; padding-right: 50px;" id="logo"></a>
                 </div>
                 <div class="col-6">
@@ -150,18 +150,18 @@
                         <p>{{id}}</p>
                         <div class="dropdown">
                             <button class="dropbtn">∨</button>
-                            <div class="dropdown-content">
-                                <a href="#">예약확인</a>
-                                <a href="#">설정</a>
-                                <a href="#">고객센터</a>
-                            </div>
+                            <div id="myDropdown" class="dropdown-content">
+                                <h6>영화 코드를 복사해주세요</h6>
+                                <h6>{{code}}</h6>
+                                
+                              </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="row" id="scroll" style="margin-right: 10px;">
-                <img src="{{ MEDIA_URL }}{{ ticket }}" width="24%">
-                <img src="/static/베이비티스_red.png" width="24%" onmouseover="this.src='/static/현재상영아님.png'" onmouseout="this.src='/static/베이비티스_red.png'">
+                <a href="{%url 'password'%}" style="border: 0;"content="80%"><img src="{{ MEDIA_URL }}{{ ticket }}" width="60%" height="auto"></a>
+                <img src="../static/img/ticket2.png" width="24%" onmouseover="this.src='/static/현재상영아님.png'" onmouseout="this.src='../static/img/ticket2.png\\'">
                 <img src="/static/변산_체크.png" width="24%">
                 <img src="/static/라이프_체크.png" width="24%">
                 <img src="/static/그녀_체크.png" width="24%">

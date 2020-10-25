@@ -7,14 +7,15 @@ from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 import streamming.views
-
+from chatting.urls import path
 
 
 urlpatterns = [
     path('video',views.video,name='video'),
     path('detail1',views.detail1,name='detail1'),
     path('mypage',views.mypage,name='mypage'),
-    path('',views.index,name='index'),
+    path('',views.jindex,name='jindex'),
+    path('index',views.index,name='index'),
     path('book1', views.book1, name='book1'),
     path('book2/', views.book2, name='book2'),
     path('book3/', views.book3, name='book3'),

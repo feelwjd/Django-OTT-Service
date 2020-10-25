@@ -4,6 +4,7 @@ from account.models import Profile , User
 from .forms import VideoForm
 import account.views
 from django.contrib.auth.decorators import login_required
+import string, random
 
 
 # Create your views here.
@@ -38,7 +39,8 @@ def book1(request):
     form = VideoForm(request.POST or None , request.FILES or None)
     if form.is_valid():
         form.save()
-    return render(request, 'book1.html',{'nvideos':vid2})
+    vcode = 4
+    return render(request, 'book1.html',{'nvideos':vid2,'vcode':vcode})
 
 def index(request):
     return render(request, 'index.html')
@@ -46,11 +48,15 @@ def index(request):
 @login_required
 def mypage(request):
     auser = request.user
-    nid = auser.username
-    videonum = Checkout.objects.filter(user_id="min")
+    anid = auser.username
+    videonum = Checkout.objects.filter(user_id=anid).last()
     imagenum = videonum.nid
-    ticket = StreammingNvideo.objects.get(pk=imagenum)
-    return render(request,'mypage.html',{'id':nid,'ticket':ticket})
+    timage = StreammingNvideo.objects.get(pk=imagenum)
+    tick1 = str(timage.nimage)
+    tick2 = tick1.lstrip("b'")
+    ticket = tick2.strip("'")
+    ticketai = videonum.num
+    return render(request,'mypage.html',{'id':anid,'ticket':ticket,'code':ticketai})
 
 def book2(request):
     nv = StreammingNvideo.objects.get(pk=1)
@@ -117,7 +123,21 @@ def detail5(request):
     return render(request, 'detail5.html',{'nvideos':vid2})
 
 def checkout(request):
+    _Length = 10
+    string_pool =string.ascii_letters
+    result = ""
+    for i in range(_Length):
+        result += random.choice(string_pool)
     auser = request.user
-    conn_user = Profile.objects.get(user=conn_user)
-
+    userid = auser.username
+    vcode = request.POST['nid']
+    getmv = StreammingNvideo.objects.get(pk=vcode)
+    getlog = Checkout()
+    getlog.user_id = userid
+    getlog.nid = getmv.nid
+    getlog.num = result
+    getlog.save()
     return redirect('mypage')
+
+def jindex(request):
+    return render(request,'jindex.html')

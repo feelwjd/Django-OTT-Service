@@ -133,7 +133,7 @@
                 <a href="{% url 'index' %}"><img src="../../static/logo.png" style="margin-right: 250px; margin-top:10px;" width="25%"></a>
                 <h4>상영시간</h4>
                 <hr>
-                <form action="." method="POST">{% csrf_token %}
+                <form action="{%url 'checkout'%}" method="POST">{% csrf_token %}
                     <input type="date" id="currentDate"/>
                     <hr>
                     <div class="rdo-grp">
@@ -154,6 +154,9 @@
                     <input type="radio" name="time" id="r5" value="5"/>
                     <label for="r5"><span></span><span>20:00</span></label>
                 </div>
+                <br><br><br><br><br><br>
+                <input type="checkbox" name="nid" id="n" value="3"/>
+                    <label for="n"><span></span><span>폰조</span></label>
             </div>
 
             <div class="v1"></div>

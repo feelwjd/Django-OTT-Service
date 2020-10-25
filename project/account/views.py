@@ -36,5 +36,5 @@ def signin(request):
 #----------------로그아웃----------------#
 def logout(request):
     auth.logout(request)
-    return redirect('index')
+    return redirect('jindex')
 

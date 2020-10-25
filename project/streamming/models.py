@@ -18,7 +18,7 @@ class StreammingNvideo(models.Model):
 class Checkout(models.Model):
     user_id = models.TextField()
     nid = models.IntegerField()
-    num = models.IntegerField(primary_key=True)
+    num = models.TextField(primary_key=True)
     class Meta:
         managed = False
         db_table = 'checkout'
