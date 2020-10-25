@@ -107,13 +107,5 @@ def detail5(request):
     vid2 = vid1.strip("'")
     return render(request, 'detail5.html',{'nvideos':vid2})
 
-def room(request,nid):
-    show = get_object_or_404(StreammingNvideo,pk=nid)
-    nv = StreammingNvideo.objects.last()
-    nvideos = nv.nvideo
-    vid = str(nvideos)
-    vid1 = vid.lstrip("b'")
-    vid2 = vid1.strip("'")
-    form = VideoForm(request.POST or None , request.FILES or None)
-    return render(request,'room.html',{'nvideos':vid2})
-
+def checkout(request):
+    redirect('mypage.html')

@@ -24,5 +24,5 @@ urlpatterns = [
     path('detail3', views.detail3, name='detail3'),
     path('detail4', views.detail4, name='detail4'),
     path('detail5', views.detail5, name='detail5'),
-    path('room/<int:nid>',views.room,name='room')
+    path('checkout',views.checkout,name='checkout')
 ]

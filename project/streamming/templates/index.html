@@ -6,10 +6,45 @@
     <title>Document</title>
     <link rel="stylesheet" href="../static/css/index.css">
      <style>
+        *{
+            color: rgb(218, 41, 28);
+        }
+        
+        button{
+            border: 0 transparent;
+            width: 4em;
+            height: 0em;
+            background-color:transparent;    
+        }
+        video{
+            height: auto;
+            z-index: 0;
+            max-width: 100%;
+            margin-left: 3em;
+           
+            
+            
+        }
+        
+        #ticket1{
+            z-index: 1;
+        }
+        #ticket2{
+            z-index: 1;
+        }
+        #ticket3{
+            z-index: 1;
+        }
+        #ticket4{
+            z-index: 1;
+        }
+        #ticket5{
+            z-index: 1;
+        }
         #logo{
             z-index: 2;
-            margin-left: 1em;
-            margin-top: 1em;
+            margin-left: 2em;
+            margin-top: 2em;
         
         }
         #logo2{
@@ -26,35 +61,35 @@
 
     </header>
     <div style="position: absolute;" id="logo">
-        <div style="position: relative; top: 0.2em; left:80.3em  "><button onclick="location.href='{%url 'signin'%}'"><img src="../static/img/admin1.png" style="width: 3.8em;"></button></div>
+        <div style="position: relative; top: 0.2em; left:89em  "><button onclick="location.href='{%url 'signin'%}'"><img src="../static/img/admin1.png" style="width: 3.8em;"></button></div>
     </div>
     
     <div style="position: absolute;" id="logo">
-        <div style="position: relative; top: 0.2em; left:83.7em "><button onclick="location.href='{%url 'signup'%}'"><img src="../static/img/admin2.png" style="width: 4.3em;"></button></div>
+        <div style="position: relative; top: 0.2em; left:92.6em "><button onclick="location.href='{%url 'signup'%}'"><img src="../static/img/admin2.png" style="width: 4.3em;"></button></div>
     </div>
    
     <div style="position: absolute;" id="logo2">
-        <div style="position: relative; top: 10em; left:39em "><button ><img src="../static/img/logo2.png" style="width: 13em;"></button></div>
+        <div style="position: relative; top: 10em; left:42em"><button ><img src="../static/img/logo2.png" style="width: 13em;"></button></div>
     </div>
     
         <div style="position: absolute;" id="ticket1">  
-            <div style="position: relative; top: 29.5em; left:18em "><button><a href="{%url 'detail1'%}"><img src="../static/img/ticket1.png" style="width: 16em;"></a></button></div>
+            <div style="position: relative; top: 26em; left:24em"><button><a href="{%url 'detail1'%}"><img src="../static/img/ticket1.png" style="width: 16em;"></a></button></div>
         </div>
         
         <div style="position: absolute;" id="ticket2">
-            <div style="position: relative; top:29.5em; left:36em "><button ><a href="{%url 'detail3'%}"><img src="../static/img/ticket2.png" style="width: 16em;"></a></button></div>
+            <div style="position: relative; top:26em; left:41em  "><button ><a href="{%url 'detail3'%}"><img src="../static/img/ticket2.png" style="width: 16em;"></a></button></div>
         </div>
 
         <div style="position: absolute;" id="ticket3">
-            <div style="position: relative; top:29.5em; left:53em "><button ><a href="{%url 'detail4'%}"><img src="../static/img/ticket3.png" style="width: 16em;"></a></button></div>
+            <div style="position: relative; top:26em; left:58em "><button ><a href="{%url 'detail4'%}"><img src="../static/img/ticket3.png" style="width: 16em;"></a></button></div>
         </div>
 
         <div style="position: absolute;" id="ticket4">
-            <div style="position: relative; top: 29.5em; left:69em "><button ><a href="{%url 'detail2'%}"><img src="../static/img/ticket4.png" style="width: 16em;"></a></button></div>
+            <div style="position: relative; top: 26em; left:76em "><button ><a href="{%url 'detail2'%}"><img src="../static/img/ticket4.png" style="width: 16em;"></a></button></div>
         </div>
     
         <div style="position: absolute;" id="ticket5">
-            <div style="position: relative; top: 29.5em; left:2em "><button ><a href="{%url 'detail5'%}"><img src="../static/img/ticket5.png" style="width: 16em;"></a></button></div>
+            <div style="position: relative; top: 26em; left:7.5em "><button ><a href="{%url 'detail5'%}"><img src="../static/img/ticket5.png" style="width: 16em;"></a></button></div>
         </div>
         
         <div>
@@ -65,10 +100,7 @@
         <!--
         <img src="../static/assets/img/s01.png" width="90%" height="90%" id="photo1">
         -->
-        <img src="../static/img/s02.png" width="90%" height="90%" id="photo2">
-        <img src="../static/img/s03.png" width="90%" height="90%" id="photo3">
-        <img src="../static/img/s04.png" width="90%" height="90%" id="photo4">
-        <img src="../static/img/s05.png" width="90%" height="90%" id="photo5">
+        
         
         
 
