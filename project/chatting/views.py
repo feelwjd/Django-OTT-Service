@@ -1,7 +1,9 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import StreammingNvideo
+from streamming.models import StreammingNvideo
 from account.models import Profile
-from .forms import VideoForm
+from streamming.forms import VideoForm
+from django.utils.safestring import mark_safe
+import json
 # Create your views here.
 def room(request,nid,room_name):
     show = get_object_or_404(StreammingNvideo,pk=nid)
