@@ -1,128 +1,176 @@
 <!DOCTYPE html>
+
 <head>
-    
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../static/css/index.css">
-     <style>
-        *{
+    <style>
+        body {
+            width: auto;
+            height: auto;
+        }
+
+        * {
             color: rgb(218, 41, 28);
         }
-        
-        button{
+
+        button {
             border: 0 transparent;
             width: 4em;
             height: 0em;
-            background-color:transparent;    
+            background-color: transparent;
         }
-        video{
-            height: auto;
+
+        video {
+            position: absolute;
             z-index: 0;
-            max-width: 100%;
-            margin-left: 3em;
-           
-            
-            
+            width: 75%;
+            height: auto;
+            top: 0%;
+            left:50%;
+            transform: translate(-50%, 0%);
         }
-        
-        #ticket1{
+
+        #ticket1 {
             z-index: 1;
+            position: absolute;
+            top:56%;
+            left:7%;
+            transform: translate(-50%, 0%);
         }
-        #ticket2{
+
+        #ticket2 {
             z-index: 1;
+            position: absolute;
+            top:56%;
+            left:25.75%;
+            transform: translate(-50%, 0%);
         }
-        #ticket3{
+
+        #ticket3 {
             z-index: 1;
+            position: absolute;
+            top:56%;
+            left:44.5%;
+            transform: translate(-50%, 0%);
         }
-        #ticket4{
+
+        #ticket4 {
             z-index: 1;
+            position: absolute;
+            top:56%;
+            left:63.25%;
+            transform: translate(-50%, 0%);
         }
-        #ticket5{
+
+        #ticket5 {
             z-index: 1;
+            position: absolute;
+            top:56%;
+            left:82%;
+            transform: translate(-50%, 0%);
         }
-        #logo{
+
+        #logo {
             z-index: 2;
             margin-left: 2em;
             margin-top: 2em;
-        
+
         }
-        #logo2{
+
+        #logo2 {
+            position: absolute;
             z-index: 4;
-            margin-top: 10em;
+            top: 30%;
+            left:47.5%;
+            transform: translate(-50%, 0%);
         }
-     </style>
+    </style>
 </head>
 {% csrf_token %}
 {% load static %}
+
 <body bgcolor="black">
     <header>
-            <a href="{%url 'index'%}"><img src="../static/img/lottelogo.png" alt="" style="float: left;" style="height: 70px;" width="90px"></a>
+        <a href="{%url 'index'%}"><img src="../static/img/lottelogo.png" alt="logo" style="position: absolute; top:1%; left:1%"
+                style="height: 70px;" width="90px"></a>
 
     </header>
-    <div style="position: absolute;" id="logo">
-        <div style="position: relative; top: 0.2em; left:89em  "><button onclick="location.href='{%url 'signin'%}'"><img src="../static/img/admin1.png" style="width: 3.8em;"></button></div>
+    <div style="position: absolute; top:2%; left:89%;" id="logo">
+        <div style="position: relative;"><button onclick="location.href='{%url 'signin'%}'"><img
+                    src="../static/img/admin1.png" style="width: 3.8em;"></button></div>
     </div>
-    
-    <div style="position: absolute;" id="logo">
-        <div style="position: relative; top: 0.2em; left:92.6em "><button onclick="location.href='{%url 'signup'%}'"><img src="../static/img/admin2.png" style="width: 4.3em;"></button></div>
-    </div>
-   
-    <div style="position: absolute;" id="logo2">
-        <div style="position: relative; top: 10em; left:42em"><button ><img src="../static/img/logo2.png" style="width: 13em;"></button></div>
-    </div>
-    
-        <div style="position: absolute;" id="ticket1">  
-            <div style="position: relative; top: 26em; left:24em"><button><a href="{%url 'detail1'%}"><img src="../static/img/ticket1.png" style="width: 16em;"></a></button></div>
-        </div>
-        
-        <div style="position: absolute;" id="ticket2">
-            <div style="position: relative; top:26em; left:41em  "><button ><a href="{%url 'detail3'%}"><img src="../static/img/ticket2.png" style="width: 16em;"></a></button></div>
-        </div>
 
-        <div style="position: absolute;" id="ticket3">
-            <div style="position: relative; top:26em; left:58em "><button ><a href="{%url 'detail4'%}"><img src="../static/img/ticket3.png" style="width: 16em;"></a></button></div>
-        </div>
+    <div style="position: absolute; top:2%; left:92%;" id="logo">
+        <div style="position: relative;"><button
+                onclick="location.href='{%url 'signup' %}'"><img src="../static/img/admin2.png"
+                    style="width: 4.3em;"></button></div>
+    </div>
 
-        <div style="position: absolute;" id="ticket4">
-            <div style="position: relative; top: 26em; left:76em "><button ><a href="{%url 'detail2'%}"><img src="../static/img/ticket4.png" style="width: 16em;"></a></button></div>
-        </div>
-    
-        <div style="position: absolute;" id="ticket5">
-            <div style="position: relative; top: 26em; left:7.5em "><button ><a href="{%url 'detail5'%}"><img src="../static/img/ticket5.png" style="width: 16em;"></a></button></div>
-        </div>
-        
-        <div>
+    <div id="logo2">
+        <div style="position: relative;"><button><img src="../static/img/logo2.png"
+                    style="width: 13em;"></button></div>
+    </div>
+    <div id="ticket1">
+        <div style="position: relative;"><button><a href="{%url 'detail1'%}"><img src="../static/img/ticket1.png"
+                        style="width: 22em;"></a></button></div>
+    </div>
+
+    <div id="ticket2">
+        <div style="position: relative;"><button><a href="{%url 'detail3'%}"><img src="../static/img/ticket2.png"
+                        style="width: 22em;"></a></button></div>
+    </div>
+
+    <div id="ticket3">
+        <div style="position: relative;"><button><a href="{%url 'detail4'%}"><img src="../static/img/ticket3.png"
+                        style="width: 22em;"></a></button></div>
+    </div>
+
+    <div id="ticket4">
+        <div style="position: relative;"><button><a href="{%url 'detail2'%}"><img src="../static/img/ticket4.png"
+                        style="width: 22em;"></a></button></div>
+    </div>
+
+    <div id="ticket5">
+        <div style="position: relative;"><button><a href="{%url 'detail5'%}"><img src="../static/img/ticket5.png"
+                        style="width: 22em;"></a></button></div>
+    </div>
+
+    <div>
         <video muted autoplay loop>
             <source src="/static/img/s01.mp4" type="video/mp4" id="photo1">
         </video>
-        </div>
-        <!--
+    </div>
+    <!--
         <img src="../static/assets/img/s01.png" width="90%" height="90%" id="photo1">
         -->
-        
-        
-        
 
-       
-        </html>
-       
-        <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
- 
-        <script>
-            $(document).ready(function(){
-                    $("#photo1").hide();
-                    $("#photo2").hide();
-                    $("#photo3").hide();
-                    $("#photo4").hide();
-                    $("#photo5").hide();
-        
-                    
-                  
-                });
-        </script>
-         
-       
-       
+
+
+
+
+    </html>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(function () {
+            $("#photo1").hide();
+            $("#photo2").hide();
+            $("#photo3").hide();
+            $("#photo4").hide();
+            $("#photo5").hide();
+
+
+
+        });
+    </script>
+
+
+
 </body>
+
 </html>
