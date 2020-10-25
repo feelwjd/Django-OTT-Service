@@ -1,7 +1,10 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import StreammingNvideo
+from .models import StreammingNvideo,Checkout
+from account.models import Profile , User
 from .forms import VideoForm
 import account.views
+from django.contrib.auth.decorators import login_required
+
 
 # Create your views here.
 def video(request):
@@ -40,8 +43,14 @@ def book1(request):
 def index(request):
     return render(request, 'index.html')
 
+@login_required
 def mypage(request):
-    return render(request,'mypage.html')
+    auser = request.user
+    nid = auser.username
+    videonum = Checkout.objects.filter(user_id="min")
+    imagenum = videonum.nid
+    ticket = StreammingNvideo.objects.get(pk=imagenum)
+    return render(request,'mypage.html',{'id':nid,'ticket':ticket})
 
 def book2(request):
     nv = StreammingNvideo.objects.get(pk=1)
@@ -108,4 +117,7 @@ def detail5(request):
     return render(request, 'detail5.html',{'nvideos':vid2})
 
 def checkout(request):
-    redirect('mypage.html')
+    auser = request.user
+    conn_user = Profile.objects.get(user=conn_user)
+
+    return redirect('mypage')

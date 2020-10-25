@@ -133,8 +133,8 @@
         }
     </style>
 </head>
-
-<body>
+{%block content%}
+<body style="background-color:dimgrey;">
     <div class="container">
         <div class="round">
             <div class="row">
@@ -147,7 +147,7 @@
                 </div>
                 <div class="col-3">
                     <div class="row">
-                        <p>프로필</p>
+                        <p>{{id}}</p>
                         <div class="dropdown">
                             <button class="dropbtn">∨</button>
                             <div class="dropdown-content">
@@ -160,7 +160,7 @@
                 </div>
             </div>
             <div class="row" id="scroll" style="margin-right: 10px;">
-                <img src="/static/삼진그룹토익반_red.png" width="24%">
+                <img src="{{ MEDIA_URL }}{{ ticket }}" width="24%">
                 <img src="/static/베이비티스_red.png" width="24%" onmouseover="this.src='/static/현재상영아님.png'" onmouseout="this.src='/static/베이비티스_red.png'">
                 <img src="/static/변산_체크.png" width="24%">
                 <img src="/static/라이프_체크.png" width="24%">
@@ -172,4 +172,5 @@
         </div>
     </div>
 </body>
+{%endblock%}
 </html>

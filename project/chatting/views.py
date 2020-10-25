@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import StreammingNvideo
+from account.models import Profile
 from .forms import VideoForm
 # Create your views here.
 def room(request,nid):
@@ -12,3 +13,7 @@ def room(request,nid):
     form = VideoForm(request.POST or None , request.FILES or None)
     return render(request,'room.html',{'nvideos':vid2})
 
+def password(request,nid):
+    auser = Profile.objects.get(user)
+    
+    return render(request,'password.html')
