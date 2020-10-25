@@ -35,8 +35,6 @@
         }
 
         button {
-            width: 90%;
-            height: 40px;
             background-color: black;
             border: red solid 1px;
             color: red;
@@ -54,7 +52,8 @@
         <div class="round">
         <div class="row">
             <div class="col-4">
-                <img src="../static/book.png" width="80%" style="margin-top: 100px;">
+                <a href="{% url 'index' %}"><img src="../static/img/lottelogo.png" style="margin-right: 170px; margin-top:10px" width="32%"></a>
+                <img src="../static/img/ticket1.png" width="80%" style="margin-top: 50px;">
             </div>
 
             <div class="col-8">
@@ -98,10 +97,10 @@
                                     <br><br>
                                 </div>
                                 <p style="font-size: 12px;">&nbsp;누적관객 120만명</p>
-                            </div>
-                            <button type="button" onclick="location.href='{%url 'detail1'%}'">예매하기</button>
+                            
+                            <button type="button" onclick="location.href='{%url 'book1'%}'">예매하기</button>
                         </div>
-                        
+                        </div>
                     </div>
                     <div class="col-7" style="font-size:8px; text-align:left;">
                         마이 드림 이즈 커리어우먼” <br>

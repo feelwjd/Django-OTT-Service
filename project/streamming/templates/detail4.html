@@ -11,7 +11,7 @@
     <style>
         body {
             text-align: center;
-            background-image: url("../static/background_img.png");
+            background-image: url("../static/테넷.jpg");
             background-size: cover;
             background-repeat: no-repeat;
         }
@@ -55,15 +55,17 @@
     <div class="container">
         <div class="round">
         <div class="row">
-            <video controls preload="metadata" id="video" style="width:500px;">
-                <source src="{{ MEDIA_URL }}{{ nvideos }}" type='video/mp4'>
-                Your browser does not support the video tag.
-            </video>
+            <div class="col-4">
+                <a href="{% url 'index' %}"><img src="../static/img/lottelogo.png" style="margin-right: 170px; margin-top:10px" width="32%"></a>
+                <img src="../static/img/ticket3.png" width="80%" style="margin-top: 50px;">
+            </div>
 
             <div class="col-8">
                 <div class="row">
-                    <img src="../../static/background_img.png" width="95%" height="300px">
-                </div>
+                    <video controls preload="metadata" id="video" style="width:500px;">
+                        <source src="{{ MEDIA_URL }}{{ nvideos }}" type='video/mp4'>
+                        Your browser does not support the video tag.
+                    </video>                </div>
                 <div class="row" style="margin-top: 15px;">
                     <div class="col-5" style="text-align: left;">
                         <div class="row">

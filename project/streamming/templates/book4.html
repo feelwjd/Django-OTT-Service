@@ -11,7 +11,6 @@
     <style>
         body {
             text-align: center;
-            background-image: url("../static/background_img.png");
             background-size: cover;
             background-repeat: no-repeat;
         }
@@ -121,6 +120,12 @@
     </style>
 </head>
 <body>
+    <div style="background-color:black;">
+        <video autoplay muted preload="metadata" id="video" width="100%" style="opacity: 0.5;">
+            <source src="{{ MEDIA_URL }}{{ nvideos }}" type='video/mp4'>
+            Your browser does not support the video tag.
+        </video>
+    </div>
     <div class="container">
         <div class="round">
         <div class="row">
@@ -171,7 +176,7 @@
             <div class="col-3" style="margin-left: 15px;">
                 <h4 style="margin-top: 56px;">결제완료</h4>
                 <hr>
-                <img src="../../static/테넷_red.png" width="100%">
+                <img src="../static/img/ticket3.png" width="100%">
             </div>
         </div>
     </div>
