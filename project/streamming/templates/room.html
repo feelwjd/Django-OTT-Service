@@ -1,0 +1,93 @@
+<!-- chat/templates/chat/room.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Chat Room</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+    <style>
+        textarea {
+            width: 100%;
+            height: 350px;
+            resize: none;
+        }
+    </style>
+</head>
+
+<body style="background-color: black;">
+    <div class="container-fluid">
+        <div class="row" style="padding-top: 150px;">
+            <div style="border:1px;" class="col-8">
+                <video autoplay preload="metadata" id="video" width="90%">
+                    <source src="{{ MEDIA_URL }}{{ nvideos }}" type='video/mp4'>
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div style="border:1px;" class="col-4">
+                <textarea id="chat-log" style="background-color:black; color:white;"></textarea><br />
+                <input id="chat-message-input" type="text" style="background-color:gray; color:white;" size=44 />
+                <input id="chat-message-submit" type="button" style="background-color:gray; color:white;" value="등록" />
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+<script>
+    var autoplayVideoInterval = setInterval("autoplayVideo()", 200);
+
+
+    function autoplayVideo() {
+        var promise = document.querySelector('video').play();
+        if (promise !== undefined) {
+            promise.then(function (_) {
+                // Autoplay started!
+                clearInterval(autoplayVideoInterval);
+
+            }).catch(function (error) {// Autoplay was prevented.
+                // Show a "Play" button so that user can start playback.
+            });
+        }
+    }
+
+    var roomName = {{ room_name_json }};
+
+    var chatSocket = new WebSocket(
+        'ws://' + window.location.host +
+        '/ws/chatting/' + roomName + '/');
+
+    chatSocket.onmessage = function (e) {
+        var data = JSON.parse(e.data);
+        var message = data['message'];
+        document.querySelector('#chat-log').value += (message + '\n');
+    };
+
+    chatSocket.onclose = function (e) {
+        console.error('Chat socket closed unexpectedly');
+    };
+
+    document.querySelector('#chat-message-input').focus();
+    document.querySelector('#chat-message-input').onkeyup = function (e) {
+        if (e.keyCode === 13) {  // enter, return
+            document.querySelector('#chat-message-submit').click();
+        }
+    };
+
+    document.querySelector('#chat-message-submit').onclick = function (e) {
+        var messageInputDom = document.querySelector('#chat-message-input');
+        var message = messageInputDom.value;
+        chatSocket.send(JSON.stringify({
+            'message': message
+        }));
+
+        messageInputDom.value = '';
+    };
+</script>
+
+</html>

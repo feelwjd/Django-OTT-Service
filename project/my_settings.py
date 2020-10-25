@@ -1,10 +1,10 @@
 DATABASES = {
     'default' : {
         'ENGINE': 'django.db.backends.mysql',    
-        'NAME': 'ott',                  
-        'USER': 'root',                          
-        'PASSWORD': 'm1020118',                  
-        'HOST': 'localhost',                     
+        'NAME': 'ottservice',                  
+        'USER': 'admin',                          
+        'PASSWORD': '12345678',                  
+        'HOST': 'ottservice.cokowsengwqy.ap-northeast-2.rds.amazonaws.com',                     
         'PORT': '3306',                          
     }
 }

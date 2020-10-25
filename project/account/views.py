@@ -16,7 +16,7 @@ def signup(request):
             user = User.objects.create_user(
                 username=request.POST["username"],password=request.POST["password01"])
             auth.login(request,user)
-            return redirect('join_index')
+            return redirect('index')
         return render(request, 'signup.html')
     return render(request,'signup.html')
 #---------------로그인------------------#
@@ -27,7 +27,7 @@ def signin(request):
         user = auth.authenticate(request,username=username,password=password)
         if user is not None:
             auth.login(request, user)
-            return redirect('join_index')
+            return redirect('index')
         else:
             return render(request,'login.html', {'error':'username or password is incorrect'})
     else:
