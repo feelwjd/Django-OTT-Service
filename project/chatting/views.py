@@ -9,8 +9,10 @@ import json
 # Create your views here.
 def room(request):
     auser = request.user
-    
-    nv = StreammingNvideo.objects.last()
+    anid = auser.username
+    videonum = Checkout.objects.filter(user_id=anid).last()
+    imagenum = videonum.nid
+    nv = StreammingNvideo.objects.get(pk=imagenum)
     nvideos = nv.nvideo
     vid = str(nvideos)
     vid1 = vid.lstrip("b'")
