@@ -3,6 +3,8 @@ from streamming.models import StreammingNvideo , Checkout
 from account.models import Profile
 from .forms import VideoForm
 from django.contrib import messages
+from django.utils.safestring import mark_safe
+import json
 
 # Create your views here.
 def room(request):
@@ -14,7 +16,7 @@ def room(request):
     vid1 = vid.lstrip("b'")
     vid2 = vid1.strip("'")
     form = VideoForm(request.POST or None , request.FILES or None)
-    return render(request,'room.html',{'nvideos':vid2, 'room_name_json': mark_safe(json.dumps(room_name))})
+    return render(request,'room.html',{'nvideos':vid2})
 
 # def room(request,nid):
 #     show = get_object_or_404(StreammingNvideo,pk=nid)
